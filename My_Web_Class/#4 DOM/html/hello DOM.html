@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello DOM</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style/styles.css">
+
+</head>
+<style>
+    #js{
+        height:200px;
+        width: 200px;
+        background-color: #5a6268;
+    }
+</style>
+<body>
+<div class="jumbotron">
+<button type="button" class="btn btn-primary" id="btn">Primary</button>
+</div>
+<ul>
+    <li>First Item</li>
+    <li id="li-2">Second Item</li>
+    <li id="li-3">Third Item</li>
+</ul>
+<!--<div class="grid">-->
+    <!--<div class="ijse">-->
+        <!--<img src="../img/ijselogo.png" width="200vw" id="img">-->
+        <!--<h3>Core Skills</h3>-->
+        <!--<div class="chain">-->
+            <!--<img src="../img/chain-1.png" id="cha1">-->
+        <!--</div>-->
+        <!--<div class="chain">-->
+            <!--<img src="../img/chain-2.png" id="cha2">-->
+        <!--</div>-->
+        <!--<div class="chain">-->
+            <!--<img src="../img/chain-3.png" id="cha3">-->
+        <!--</div>-->
+        <!--<div class="chain">-->
+            <!--<img src="../img/chain-4.png" id="cha4">-->
+        <!--</div>-->
+        <!--<div class="chain">-->
+            <!--<img src="../img/chain-5.png" id="cha5">-->
+        <!--</div>-->
+        <!--<div class="chain">-->
+            <!--<img src="../img/chain-6.png" id="cha6">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="box1" id="box1">-->
+        <!--<br/><br/><br/><br/>-->
+        <!--<h4>Concepts</h4>-->
+    <!--</div>-->
+    <!--<div class="box1" id="box2">-->
+        <!--<br/><br/><br/><br/>-->
+        <!--<h4>Technology</h4>-->
+    <!--</div>-->
+    <!--<div class="box1" id="box3">-->
+        <!--<br/><br/><br/><br/>-->
+        <!--<h4>Development</h4>-->
+    <!--</div>-->
+    <!--<div class="box1" id="box4">-->
+        <!--<br/><br/><br/><br/>-->
+        <!--<h4>Experience</h4>-->
+    <!--</div>-->
+    <!--<div class="box1" id="box5">-->
+        <!--<br/><br/><br/><br/>-->
+        <!--<h4>Expertise</h4>-->
+    <!--</div>-->
+    <!--<div class="box1" id="box6">-->
+        <!--<br/><br/><br/><br/>-->
+        <!--<h4>Knowledge</h4>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+
+<input type="text" id="txtInput" placeholder="jstext" class="form-control">
+<h1>...</h1>
+<div class="container" style="height: 200px">
+<h2>...Insistute Of Java and Software Enginnering</h2>
+</div>
+    <button type="button" class="btn btn-success" id="btnevent">Primary</button>
+<div id="js"></div>
+<h3>Sahan Dissanayaka</h3>
+
+
+<div class="blockchain">
+</div>
+<script type="application/javascript"   src="../js/jquery-3.3.1.min.js" rel="script"></script>
+<script src="../js/bootstrap.min.js" rel="script"></script>
+<script rel="script">
+    // var temp1=document.getElementById("btnevent");
+    // temp1.addEventListener("click",function(){
+    //
+    //     for(var i=0; i<5; i++){
+    //         $('#js').css("background-color","blue");
+    //         $('#js').css("font-size","red");
+    //         $('#js').css("font-size","green");
+    //         $('#js').css("font-size","orange");
+    //         $('#js').css("font-size","yellow");
+    //     }
+    // });
+
+
+    ////////////////////    JS TIMERS /////////////////////////
+    // setTimeout(function(){
+    //     alert("I'm Dissanayaka")
+    // },2000)
+    //
+    // setInterval(function(){
+    //     // document.write("hello")
+    // },1000)
+    var temp1=document.getElementById("btnevent");
+    temp1.addEventListener("click",function(){
+            var colors=['red','green','blue','yellow','orange','black'];
+            var i=0;
+        setInterval(function(){
+            $('#js').css("background-color",colors[i]);
+            $('#js').css("transition","all 1s");
+            i++
+            if(i>colors.length){
+                i=0;
+            }
+        },1000)
+
+    });
+    /////////////////////////Mouse Event//////////////////////////
+    $(window).mousemove(function(eventData) {
+        console.log(eventData.pageX)
+        console.log(eventData.pageY)
+    })
+
+    $(window).mousemove(function(eventData) {
+        $('h3').css('top',eventData.pageX)
+        $('h3').css('left',eventData.pageY)
+        $('h3').css('position',"absolute")
+    });
+    ////////////////////////Letter by letter//////////////////////////
+    let tt=$('h2').text();
+    let a=0;
+    setInterval(function(){
+        $('h2').text(tt.substring(0,a));
+        a++;
+        if(a>tt.length){
+            a=0;
+        }
+    },300)
+
+    ///////////////////Stop the loop//////////////////////
+    var i=0;
+    var id=setInterval(function(){
+        i++
+        console.log(i);
+        if(i==5){
+            clearInterval(id)
+        }
+    },200)
+
+    ///////////////////////////////////////////////////////
+
+
+
+
+
+</script>
+<script rel="script">
+    $("#txtInput").on("keydown",function(eventData) {
+        //$(('h1').text($(this.val())));
+        if((eventData.which>=65 && eventData.which<=90)){
+
+        }else if(eventData.which==8){
+
+        } else{
+            eventData.preventDefault();
+        }
+    });
+
+
+    var tem="Hello there how are you...."
+////////////////////////////////////////////////////////////
+    // var temp=document.getElementById("btn");
+    // temp.addEventListener("click",function(){
+    //     alert("hello!!!!");
+    // });
+    var temp1=document.getElementById("btn");
+    temp1.addEventListener("click",function(){
+        $('ul li:nth-child(2)').css("font-size","30px");
+    });
+    var temp2=document.getElementById("li-3");
+    temp2.addEventListener("mousemove", function(){
+        $('ul li:nth-child(3)').css("font-size","30px");
+    });
+    var temp2=document.getElementById("li-3");
+    temp2.addEventListener("mouseout", function(){
+        $('ul li:nth-child(3)').css("font-size","15px");
+    });
+    var temp3=document.getElementById("box1");
+    temp3.addEventListener("mousemove", function(){
+        $('#box1').css("background-color","red");
+        $('#box1').css("height","110px");
+        $('#box1').css("width","110px");
+        $('#box1').css("border-radius","55px");
+    });
+    var temp3=document.getElementById("box1");
+    temp3.addEventListener("mouseout", function(){
+        $('#box1').css("background-color","rgb(212,207,215)");
+        $('#box1').css("height","100px");
+        $('#box1').css("width","100px");
+        $('#box1').css("border-radius","50px");
+    });
+    var temp3=document.getElementById("box2");
+    temp3.addEventListener("mousemove", function(){
+        $('#box2').css("background-color","red");
+        $('#box2').css("height","110px");
+        $('#box2').css("width","110px");
+        $('#box2').css("border-radius","55px");
+    });
+    var temp3=document.getElementById("box2");
+    temp3.addEventListener("mouseout", function(){
+        $('#box2').css("background-color","rgb(212,207,215)");
+        $('#box2').css("height","100px");
+        $('#box2').css("width","100px");
+        $('#box2').css("border-radius","50px");
+    });
+    var temp3=document.getElementById("box3");
+    temp3.addEventListener("mousemove", function(){
+        $('#box3').css("background-color","red");
+        $('#box3').css("height","110px");
+        $('#box3').css("width","110px");
+        $('#box3').css("border-radius","55px");
+    });
+    var temp3=document.getElementById("box3");
+    temp3.addEventListener("mouseout", function(){
+        $('#box3').css("background-color","rgb(212,207,215)");
+        $('#box3').css("height","100px");
+        $('#box3').css("width","100px");
+        $('#box3').css("border-radius","50px");
+    });
+    var temp3=document.getElementById("box4");
+    temp3.addEventListener("mousemove", function(){
+        $('#box4').css("background-color","red");
+        $('#box4').css("height","110px");
+        $('#box4').css("width","110px");
+        $('#box4').css("border-radius","55px");
+    });
+    var temp3=document.getElementById("box4");
+    temp3.addEventListener("mouseout", function(){
+        $('#box4').css("background-color","rgb(212,207,215)");
+        $('#box4').css("height","100px");
+        $('#box4').css("width","100px");
+        $('#box4').css("border-radius","50px");
+    });
+    var temp3=document.getElementById("box5");
+    temp3.addEventListener("mousemove", function(){
+        $('#box5').css("background-color","red");
+        $('#box5').css("height","110px");
+        $('#box5').css("width","110px");
+        $('#box5').css("border-radius","55px");
+    });
+    var temp3=document.getElementById("box5");
+    temp3.addEventListener("mouseout", function(){
+        $('#box5').css("background-color","rgb(212,207,215)");
+        $('#box5').css("height","100px");
+        $('#box5').css("width","100px");
+        $('#box5').css("border-radius","50px");
+    });
+    var temp3=document.getElementById("box6");
+    temp3.addEventListener("mousemove", function(){
+        $('#box6').css("background-color","red");
+        $('#box6').css("height","110px");
+        $('#box6').css("width","110px");
+        $('#box6').css("border-radius","55px");
+    });
+    var temp3=document.getElementById("box6");
+    temp3.addEventListener("mouseout", function(){
+        $('#box6').css("background-color","rgb(212,207,215)");
+        $('#box6').css("height","100px");
+        $('#box6').css("width","100px");
+        $('#box6').css("border-radius","50px");
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

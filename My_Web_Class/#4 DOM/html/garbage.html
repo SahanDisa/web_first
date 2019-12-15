@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile JS</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style/styles.css">
+
+    <style>
+        #header{
+            height: 400px;
+            width: 100%;
+            background-image: url("../new/skyline.jpg");
+            background-repeat: no-repeat;
+        }
+        .circle{
+            position: relative;
+            background-color: #005cbf;
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container" id="header">
+<h1>Profile</h1>
+    <h3>Java Script Works.....</h3>
+<h2>...This is Sahan Dissanayaka!!!!!!</h2>
+</div>
+<div class="container">
+<div class="row">
+    <div class="col-12 col-md-4 col-lg-4">
+        <div class="circle" id="circle1">
+            <a href="../html/form.html"><p align="center" style="font-size: 25px">Form</p></a>
+        </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+        <div class="circle" id="circle2">
+            <a href="../html/hello%20DOM.html"><p align="center" style="font-size:35px">DOM</p></a>
+        </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+        <div class="circle" id="circle3">
+            <a href="../html/hello%20DOM.html"><p align="center" style="font-size: 25px">DOM</p></a>
+        </div>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-12 col-lg-3">
+            <a href="../html/hello%20DOM.html"><img src="../new/1.jpg" width="400px"></a>
+        </div>
+        <div class="col-12 col-lg-2">
+            <img src="../new/2.jpeg" width="100px">
+        </div>
+        <div class="col-12 col-lg-2">
+            <img src="../new/content_screenshot_2017-02-23_14_38_56.png" width="100px">
+        </div>
+        <div class="col-12 col-lg-2">
+            <img src="../new/Picture1.png" width="100px">
+            <img src="../new/1_vUMZyj5Sku04hnOUUFm9eQ.jpeg" width="100px">
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<script type="application/javascript"   src="../js/jquery-3.3.1.min.js" rel="script"></script>
+<script src="../js/bootstrap.min.js" rel="script"></script>
+<script rel="script">
+    let tt=$('h2').text();
+    let a=0;
+    setInterval(function(){
+        $('h2').text(tt.substring(0,a));
+        a++;
+        if(a>tt.length){
+            a=0;
+        }
+    },300)
+    var temp=document.getElementById("circle1");
+    temp.addEventListener("mousemove", function(){
+        $('#circle1').css("background-color","#004cbf");
+        $('#circle1').css("height","210px");
+        $('#circle1').css("width","210px");
+        $('#circle1').css("border-radius","105px");
+    });
+    var temp2=document.getElementById("circle1");
+    temp2.addEventListener("mouseout", function(){
+        $('#circle1').css("background-color","#005cbf");
+        $('#circle1').css("height","200px");
+        $('#circle1').css("width","200px");
+        $('#circle1').css("border-radius","100px");
+    });
+    var temp=document.getElementById("circle2");
+    temp.addEventListener("mousemove", function(){
+        $('#circle2').css("background-color","#004cbf");
+        $('#circle2').css("height","210px");
+        $('#circle2').css("width","210px");
+        $('#circle2').css("border-radius","105px");
+    });
+    var temp2=document.getElementById("circle2");
+    temp2.addEventListener("mouseout", function(){
+        $('#circle2').css("background-color","#005cbf");
+        $('#circle2').css("height","200px");
+        $('#circle2').css("width","200px");
+        $('#circle2').css("border-radius","100px");
+    });
+    var temp=document.getElementById("circle3");
+    temp.addEventListener("mousemove", function(){
+        $('#circle3').css("background-color","#004cbf");
+        $('#circle3').css("height","210px");
+        $('#circle3').css("width","210px");
+        $('#circle3').css("border-radius","105px");
+    });
+    var temp2=document.getElementById("circle3");
+    temp2.addEventListener("mouseout", function(){
+        $('#circle3').css("background-color","#005cbf");
+        $('#circle3').css("height","200px");
+        $('#circle3').css("width","200px");
+        $('#circle3').css("border-radius","100px");
+    });
+</script>
+
+</body>
+</html>

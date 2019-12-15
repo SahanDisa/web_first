@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+    <h1 id="h1">h1 Heading</h1>
+    <h2 id="h2">h2 Heading</h2>
+    <button id="btn">Test JS</button>
+    <pre>
+       <form>
+        <input type="text" id="cusID" placeholder="customerID">
+        <input type="text" id="cusName" placeholder="customerName">
+        <input type="text" id="cusAddress" placeholder="customerAddress">
+        <input type="text" id="cusSalary" placeholder="customerSalary">
+        <button id="btn2" class="btn btn-success" href="html/hello DOM.html" >Save Customer</button>
+    </form>
+
+        <h3>Display</h3>
+            <h4>Customer ID:<span id="disId"></span></h4>
+            <h4>Customer Name:<span id="disName"></span></h4>
+            <h4>Customer Address:<span id="disAddress"></span></h4>
+            <h4>Customer Salary:<span id="disSalary"></span></h4>
+    </pre>
+
+    <script src="js/jquery-3.3.1.min.js" rel="script"></script>
+<script>
+    // var btnbtn =document.getElementById('btn');
+    // btnbtn.addEventListener("click",function () {
+    //     alert('Hello There...')
+    // });
+    //
+    // $('#btn').click(function () {
+    //     alert("Hi Malithya...")
+    // });
+    // $('#btn').click(function () {
+    //     alert("Hiiii Malithya...")
+    // })
+    var SM=jQuery.noConflict();
+
+    // SM('#btn').click(function (){
+    //     alert("Hiiii...")
+    // })
+    SM('#btn').click(function (){
+        var temp='Hello Malithya';
+        SM('#h1').text(temp);
+        SM('#h1').css("color","pink");
+        // alert(text);
+    })
+    SM('#btn2').click(function () {
+        console.log(SM('#cusID'))
+        // var rr=SM('#cusID').val();
+        // alert(rr)
+    })
+
+
+
+
+
+
+
+
+
+    ///////////////////////////PROTOTYPE /////////////////////////////////////
+    var vehicle={}
+    undefined
+    var car={}
+    undefined
+    vehicle.park=function(){}
+    ƒ (){}
+    function (){
+        VM1713:1 Uncaught SyntaxError: Unexpected token (
+            function Vehicle(){}
+        undefined
+        function Car(){}
+        undefined
+        Car.prototype=Vehicle.prototype
+        {constructor: ƒ}
+        Car.prototype.TestCar=function(){ }
+        ƒ (){ }
+        Car.prototype.TestCar=function(){
+            console.log("Testing Car");
+        }
+        ƒ (){
+            console.log("Testing Car");
+        }
+        Vehicle.prototype.TestCar();
+        VM1885:2 Testing Car
+        undefined
+        Vehicle.prototype.testVehicle=function(){
+        console.log("testVehicle is Testing")
+        }
+        var a=new Car();
+        a instanceof Vehicle //true
+
+        var v=new Vehicle();
+
+    }
+
+///////////////////////////////////////////Inheritance //////////////////////////////////
+    function Vehicle(){}
+    undefined
+    function Car(){}
+    undefined
+    Car.prototype=Object.create(Vehicle.prototype);
+    Vehicle {}
+    Car.prototype.constructor=Car
+    ƒ Car(){}
+    Vehicle.prototype.testVehicle=function(){
+        console.log("Vehicle is Testing");
+    }
+    ƒ (){
+        console.log("Vehicle is Testing");
+    }
+    Car.prototype.testVehicle();
+    VM2172:2 Vehicle is Testing
+    undefined
+    Car.prototype.testCar=function(){
+        console.log("Car is Testing");
+    }
+    ƒ (){
+        console.log("Car is Testing");
+    }
+    Vehicle.prototype.testCar();
+
+
+
+    /////error occur//////
+
+
+    //////////////////////////////////////////////////////2018-10-13/////////////////////////////////////////////////////////////////
+    function Vehicle(id,brand){
+        this.id=id;
+        this.brand=brand;
+    }
+    undefined
+    function car(id,name){
+        Vehicle.apply(this,arguments)
+    }
+    undefined
+    car.prototype=Object.create(vehicle.prototype);
+    car.prototype.constructer=car;
+
+    //at <anonymous>:1:29
+    //(anonymous) @ VM496:1
+    car.prototype=Object.create(Vehicle.prototype);
+    car.prototype.constructer=car;
+    ƒ car(id,name){
+        Vehicle.apply(this,arguments)
+    }
+    Vehicle.prototype.park=function(){
+        console.log("the Vehicle"+this.brand+"is parking");
+    }
+
+    var a=new car("C001","BMW");
+    undefined
+    a.park();
+    the VehicleBMWis parking
+    undefined
+    Vehicle.prototype.park=function(){
+        console.log("the Vehicle "+this.brand+" is parking");
+    }
+    ƒ (){
+        console.log("the Vehicle "+this.brand+" is parking");
+    }
+    a.park();
+     the Vehicle BMW is parking
+    undefined
+
+
+
+
+
+
+    ////////////////////ENCAPSULATION///////////////////////////
+    function customer(id,name,address,salary){
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+
+        this.getcustomerID=function(){
+            return this.id;
+        }
+        this.getcustomername=function(){
+            return this.name;
+        }
+
+
+    }
+    undefined
+    var tempcustomer=new customer("C001","sahan","moratuwa","485000");
+    undefined
+    tempcustomer.getcustomerID();
+    "C001"
+    tempcustomer.id
+    "C001"
+
+
+
+
+    function customer(id,name,address,salary){
+        var _id=id;
+        var _name=name;
+        var _address=address;
+        var _salary=salary;
+
+        this.getcustomerID=function(){
+            return _id;
+        }
+
+
+    }
+    undefined
+    var temp=new customer("C001","thiwanka","moratuwa","350000");
+    undefined
+    temp.id;
+    undefined
+    temp.getcustomerID();
+
+
+
+///////////////////////Using set and get//////////////////////
+
+
+    function customer(id,name,address,salary){
+        var _id=id;
+        var _name=name;
+        var _address=address;
+        var _salary=salary;
+
+        this.getcustomerID=function(){
+            return _id;
+        }
+        this.getcustomerName=function(){
+            return _name;
+        }
+        this.getcustomerAddress=function(){
+            return _address;
+        }
+        this.getcustomerSalary=function(){
+            return _salary;
+        }
+        this.setcustomerID=function(){
+            _id=id;
+        }
+        this.setcustomerName=function(){
+            _name=name;
+        }
+        this.setcustomerAddress=function(){
+            _address=address;
+        }
+        this.setcustomerSalary=function(){
+            _salary=salary;
+        }
+
+    }
+    undefined
+    var demo=new customer ("C001","Sahan","Moratuwa","385,000");
+    undefined
+    demo.getcustomerID();
+    "C001"
+
+
+
+
+
+    function Man(id,name,address,salary){
+        var _id=id;
+        var _name=name;
+        var _address=address;
+        var _salary=salary;
+
+
+        this.getManID=function(){
+            return _id;
+        }
+        this.getManName=function(){
+            return _name;
+        }
+        this.getManAddress=function(){
+            return _address;
+        }
+        this.getManSalary=function(){
+            return _salary;
+        }
+    }
+
+
+    undefined
+    function Nimal(id,name,address,salary){
+        Man.apply(this,arguments);
+    }
+    undefined
+    Nimal.prototype=Object.create(Man.prototype);
+    Nimal.prototype.constructor=Nimal;
+    ƒ Nimal(id,name,address,salary){
+        Man.apply(this,arguments);
+    }
+    Man.prototype.run=function(){
+        console.log("The Man"+this.getManName()+"is running")
+    }
+    ƒ (){
+        console.log("The Man"+this.getManName()+"is running")
+    }
+    var temp=new Nimal("C01","Kamal","Kalutara","100,000");
+    undefined
+    temp.run();
+    Man.prototype.run=function(){
+        console.log("The Man"+this.getManName()+"is running")
+    }
+    ƒ (){
+        console.log("The Man"+this.getMancName()+"is running")
+    }
+    temp.run();
+    Man.prototype.run=function(){
+        console.log("The Man"+this.getcManName()+"is running")
+    }
+    ƒ (){
+        console.log("The Man"+this.getcManName()+"is running")
+    }
+    temp.run();
+    VM4243:2 The ManKamalis running
+
+</script>
+</body>
+</html>
