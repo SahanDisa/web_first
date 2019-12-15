@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../style/mainstyle.css">
+</head>
+<body>
+<header>
+    <img id="banner" src="../assets/common-banner.png">
+</header>
+<h1>Owner Section</h1>
+<h2>Add Owner</h2>
+<form action="../php/index.php" method="post">
+    <p>
+        <label for="firstName">OwnerID :</label>
+        <input type="text" name="first_name" id="firstName">
+    </p>
+    <p>
+        <label for="lastName">BranchNo :</label>
+        <input type="text" name="last_name" id="lastName">
+    </p>
+    <input name="owner" type="submit" value="Add Owner">
+
+</form>
+<h2>Add Property</h2>
+<form action="../php/property.php" method="post">
+    <p>
+        <label for="propno">Property No :</label>
+        <input type="text" name="propno" id="propno">
+    </p>
+    <p>
+        <label for="protype">Type :</label>
+        <input type="text" name="protype" id="protype">
+    </p>
+    <p>
+        <label for="propadd">Property Address :</label>
+        <input type="text" name="propadd" id="propadd">
+    </p>
+    <p>
+        <label for="pronumroom">NumOfRooms :</label>
+        <input type="text" name="pronumroom" id="pronumroom">
+    </p>
+    <p>
+        <label for="prorent">Proposed Rent :</label>
+        <input type="text" name="prorent" id="prorent">
+    </p>
+    <p>
+        <label for="prowner">OwnerID :</label>
+        <input type="text" name="proowner" id="prowner">
+    </p>
+    <p>
+        <label for="probranch">BranchID :</label>
+        <input type="text" name="probranch" id="probranch">
+    </p>
+
+    <input type="submit" value="Add Property">
+
+</form>
+<h2>Update</h2>
+<form action="../php/index.php" method="post">
+    <p>
+        <label for="firstName">OwnerID :</label>
+        <input type="text" name="first_name" id="update">
+    </p>
+    <p>
+        <label for="lastName">BranchNo :</label>
+        <input type="text" name="last_name" id="updateid">
+    </p>
+    <input type="submit" value="Add Owner">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+#banner{
+    width: 100%;
+}
+.row{
+    margin: 0;
+}
+.single-service {
+    margin-bottom: 30px; }
+.single-service .service-icon {
+    position: relative;
+    margin-bottom: 40px; }
+.single-service .service-icon .s-icon {
+    position: absolute;
+    left: 0;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+.single-service .service-icon .clr-icon {
+    position: absolute;
+    left: -25px;
+    top: -4px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+.single-service .service-content h4 {
+    font-size: 18px;
+    margin-bottom: 20px; }
+.single-service .service-content p {
+    margin-bottom: 0; }
+.single-service:hover .service-icon .s-icon {
+    opacity: 0;
+    visibility: hidden; }
+.single-service:hover .service-icon .clr-icon {
+    opacity: 1;
+    visibility: visible;
+}
+footer{
+    height: 300px;
+    width: 100%;
+    background-color: #4e555b;
+}
+footer{
+    color: white;
+}
+
+@media all and (min-width: 900px) and (max-width: 1000px){
+
+}
