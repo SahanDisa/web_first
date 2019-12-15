@@ -1,0 +1,133 @@
+.box1{
+    position: absolute;
+    left: 0;
+    height: 50%;
+    width: 50%;
+    background-color: lightblue;
+}
+.box2 {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: lightcoral;
+    right: 0;
+}
+.box3{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: blueviolet;
+    left: 0;
+    bottom: 0;
+}
+.box4{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    background-color: lightgreen;
+    bottom: 0;
+    right: 0;
+}
+.box5{
+    position: absolute;
+    border-radius: 100px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(201,26,62,1) 100%);
+    background-color: yellow;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.circle1{
+    position: absolute;
+    border-radius: 100px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+    background-color: lightseagreen;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.circle2{
+    position: absolute;
+    border-radius: 100px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+    right: 0;
+    background-color: lightseagreen;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.circle3{
+    position: absolute;
+    border-radius: 100px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+    bottom: 0;
+    left:0;
+    background-color: lightseagreen;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.circle4{
+    position: absolute;
+    border-radius: 100px 100px 100px 100px;
+    height: 200px;
+    width: 200px;
+    bottom:0;
+    right:0;
+    background-color: lightseagreen;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);}
+.smallbox1{
+    position: absolute;
+    height:50px;
+    width: 50px;
+    background-color: #917a4c;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
+.smallbox2{
+    position: absolute;
+    height:50px;
+    width: 50px;
+    background-color: #917a4c;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+
+}
+.smallbox3{
+    position: absolute;
+    height:50px;
+    width: 50px;
+    background-color: #917a4c;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}
+.smallbox4{
+    position: absolute;
+    height:50px;
+    width: 50px;
+    background-color: #917a4c;
+    top:0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+}

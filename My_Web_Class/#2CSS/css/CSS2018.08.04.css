@@ -1,0 +1,88 @@
+.one{
+    background-color: red;
+    height:100px;
+    width: 100px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 15px 10px 125px 8px rgba(51,34,51,1);
+    -moz-box-shadow: 15px 10px 125px 8px rgba(51,34,51,1);
+    box-shadow: 15px 10px 125px 8px rgba(51,34,51,1);
+    transition: width;
+    transition-duration: 1s;
+    animation: aniName;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.one:hover{
+    background-color: orange;
+    width:500px;
+    transition: width;
+    transition-duration: 1s;
+    transform: rotate(20deg);
+}
+.two{
+    height: 1000px;
+    width: 1000px;
+    background-color: #917a4c;
+    background: url("../images/_car-big.png");
+    background: url("../images/world/102122-Desktopography-nature-landscape-world-digital_art-Earth-divers-iceberg-fish-split_view-748x421.jpg");
+    background: url("../images/world/1509892471_ultimate-cisco-certificatio_story.jpg");
+    background: url("../images/world/152571_illustration-wallpaper.jpg");
+    background: url("../images/world/2000x1000-Technology.jpg");
+    animation: Slideshow;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+}
+@keyframes Slideshow{
+    0%{
+        background: url("../images/_car-big.png");
+
+    }
+    25%{
+        background: url("../images/world/102122-Desktopography-nature-landscape-world-digital_art-Earth-divers-iceberg-fish-split_view-748x421.jpg");
+
+    }
+    50%{
+        background:url("../images/world/1509892471_ultimate-cisco-certificatio_story.jpg");
+
+    }
+    75%{
+        background: url("../images/world/152571_illustration-wallpaper.jpg");
+
+    }
+    100%{
+        background: url("../images/world/2000x1000-Technology.jpg");
+
+    }
+}
+
+@keyframes aniName {
+    0%{
+        background-color: orange;
+        transform: rotate(0deg);
+    }
+    20%{
+        margin-left:400px;
+        margin-top: 0px;
+        transform: rotate(360deg);
+
+    }
+    40%{
+        margin-left: 400px;
+        margin-top:400px;
+        transform: rotate(0deg);
+
+    }
+    60%{
+        margin-top:400px;
+        margin-left:0px;
+        transform: rotate(360deg);
+
+    }
+    80%{
+        margin-top:0px
+    }
+    100%{
+        background-color: red;
+    }
+}

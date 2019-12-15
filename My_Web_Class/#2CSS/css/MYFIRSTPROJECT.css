@@ -1,0 +1,51 @@
+.header{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    background-color: #181115;
+    background: rgb(48,48,43);
+    background: linear-gradient(90deg, rgba(48,48,43,1) 27%, rgba(42,43,34,1) 51%, rgba(11,11,11,1) 86%);
+
+}
+.name{
+    color: white;
+}
+.taxi{
+    color: yellow;
+}
+.car{
+    margin-left: 400px;
+}
+.content{
+    position: absolute;
+    height: 600px;
+    width: 100%;
+    background-color: yellow;
+    background: rgb(198,190,16);
+    background: linear-gradient(90deg, rgba(198,190,16,1) 27%, rgba(204,224,29,1) 51%, rgba(189,255,0,1) 86%);
+
+}
+.navi{
+    position: absolute;
+    left:0;
+    height: 450px;
+    width: 300px;
+    background-color: red;
+    background: rgb(110,105,8);
+    background: linear-gradient(0deg, rgba(110,105,8,1) 0%, rgba(199,203,18,0.6727065826330532) 100%);
+}
+.gettaxi{
+    height: 50px;
+    width: 200px;
+    background-color: red;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 600px;
+
+
+}
+.footer{
+    height: 400px;
+    width: 100%;
+    bottom:0;
+    background-color: lightblue;
+}
