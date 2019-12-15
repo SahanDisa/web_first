@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="">//External Javascript</script>
+</head>
+<body>
+	<script type="text/javascript">
+		//Internal javascript
+	</script>
+</body>
+</html>
+-----------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		alert("This is an alert box!");
+	</script>
+</body>
+</html>

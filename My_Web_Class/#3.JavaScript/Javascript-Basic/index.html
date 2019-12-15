@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<script>
+    /*
+    alert("Alert Output");
+    console.log("Console Output");
+    document.write("Document Output");
+    */
+
+    // inline comment
+
+
+    //Java Script is a loosly typed
+    // langunage
+    var a = 10;
+    a = "sanu";
+    a = false;
+    a = true;
+    console.log(typeof a);
+
+
+    //String
+    //Number
+    //Boolean
+    //Undefined
+    //Null
+    //Symbol
+
+    //String
+    var name = "Sanu Vithage";
+    var address = 'Panadura';
+    console.log(typeof name);
+
+    // Numbers
+    var int = 10;
+    var double = 100.00;
+
+    // decimal
+    var a=375;
+    //octal
+    var aa=-0o77;
+    //hexadecimal
+    var cc=0x1123;
+    //binary
+    var as=0b0011;
+    console.log(typeof int);
+
+    // Boolean
+    var t = false;
+    var t2 = true;
+
+    // Undefined
+    var abcd;
+    console.log(typeof abcd);
+
+    //Null
+    var abc = null;
+    console.log(typeof abc);
+
+    //Symbol
+    var sym = Symbol("Hello");
+    console.log(typeof sym);
+
+
+    // JS Methods
+    //not supporting for method overloading
+    function methodName(name, address) {
+        alert(name, address);
+    }
+    methodName("Sanu","Panadura");
+
+    function methodName(name) {
+        alert(name);
+    }
+
+    // methodName("Sanu","Address");
+
+
+    function secondRename(text) {
+        alert(text);
+    }
+
+    // secondRename("This is the text that i want to pass");
+
+    function calculate(firstNumber, secondNumber) {
+        alert(firstNumber + secondNumber);
+    }
+
+    calculate(10, 100);
+
+
+    const abcd3 = 100;
+    console.log(typeof abcd3);
+
+
+    // Objects
+
+    // Literal Objects
+    //Constructor base Object
+
+    //Literal Objects
+    var ob = {};
+
+    //Constructor base
+    var cob = new Object();
+
+
+    //Literal Object
+    var ob = {};
+    ob.name = "Sanu";
+    ob.address = "Panadura";
+    ob.address
+    ob.name
+    ob.method = function () {
+        alert("hello");
+    }
+    ob.method();
+
+
+    // 2nd way
+    var oba = {
+        name: "Sanu Vithange",
+        address: "Panadura",
+        salary: "4984949",
+        tp: "0882932",
+        details: function () {
+            alert("Hello Sanu");
+        }
+    };
+
+
+    // Contructor base object
+    function Customer(id,name,address,salary){
+        var _id=id;
+        var _name=name;
+        var _address=address;
+        var _salary=salary;
+    }
+    var customer= new Customer("C001","Sanu Vithanage","Panadura",9999);
+
+
+    var customerOB={
+        id:"C001",
+        name:"Sanu Vithanage",
+        address:"Galle",
+        salary:5000,
+        getID:function(){
+            return this.id;
+        },
+        setID:function(id){
+            this.id=id;
+        }
+    };
+    undefined
+    customerOB.getID();
+    "C001"
+    customerOB.setID("C002");
+    undefined
+    customerOB.getID();
+    "C002"
+
+
+    var customerOB={
+        id:"C001",
+        name:"Sanu Vithanage",
+        address:"Galle",
+        salary:5000,
+        getID:function(){
+            return this.id;
+        },
+        setID:function(id){
+            this.id=id;
+        },
+        getName:function(){
+            return this.name;
+        },
+        setName:function(name){
+            this.name=name;
+        },
+        getAddress:function(){
+            return this.address;
+        },
+        setAddress:function(address){
+            this.address=address;
+        },
+        getSalary:function(){
+            return this.salary;
+        },
+        setSalary:function(salary){
+            this.salary=salary;
+        }
+    };
+
+
+    //there is a problem with above version..
+
+
+    function Customer(id,name,address,salary){
+        var _id =id;
+        var _name=name;
+        var _address=address;
+        var _salary=salary;
+        this.getCustomerID=function(){
+            return _id;
+        };
+        this.setCustomerID=function(id){
+            _id=id;
+        };
+        this.getCustomerName=function(){
+            return _name;
+        };
+        this.setCustomerName=function(name){
+            _name=name;
+        };
+        this.getCustomerAddress=function(){
+            return _address;
+        };
+        this.setCustomerAddress=function(address){
+            _address=address;
+        };
+        this.getCustomerSalary=function(){
+            return _salary;
+        };
+        this.setCustomerSalary=function(salary){
+            _salary=salary;
+        };
+    }
+    undefined
+    var temp= new Customer("C001","Sanu","Panadura",567);
+    undefined
+    temp.getCustomerID();
+    "C001"
+    temp.setCustomerID("C0003");
+    undefined
+    temp.getCustomerID();
+    "C0003"
+
+
+
+    // java script arrays
+
+    var a2=['IJSE',"NIBM",'SLIIT',3000,"PCJT"]; //litertal base array
+    undefined
+    a2.toString();
+    "IJSE,NIBM,SLIIT,3000,PCJT"
+    a2[0];
+    "IJSE"
+    a2[1];
+    "NIBM"
+    a2[2];
+    "SLIIT"
+
+
+
+
+
+
+    var numerbs=[9,4,2,5,7,8,1];
+    undefined
+    numerbs;
+    (7) [9, 4, 2, 5, 7, 8, 1]
+    numerbs.sort();
+    (7) [1, 2, 4, 5, 7, 8, 9]
+    numerbs.reverse();
+    (7) [9, 8, 7, 5, 4, 2, 1]
+
+
+
+
+    for(var i=0;i<10;i++){
+        console.log(i);
+    }
+
+
+    var i=0;
+    while(i<10){
+        console.log(i);
+        i++;
+    }
+
+
+
+
+    var i=0;
+    do{
+        i++;
+        console.log(i);
+    }while(i<10);
+
+    // this  is how to define a constructor base array
+    var a= new Array("Sanu","Sura","Sama","DD");
+    undefined
+    a[0];
+    "Sanu"
+
+
+    // array methods
+    var array=["Sanu","IJSE"];
+    undefined
+    array.push("ABCD");
+    3
+    array;
+    (3) ["Sanu", "IJSE", "ABCD"]
+    array.pop();
+    "ABCD"
+    array;
+    (2) ["Sanu", "IJSE"]
+    array.shift();
+    "Sanu"
+    array;
+    ["IJSE"]
+    array.unshift("Sanu");
+    2
+    array;
+    (2) ["Sanu", "IJSE"]
+
+
+
+
+    array;
+    (6) ["Sanu", "IJSE", "A", "B", "C", "D"]
+    array.splice(0,1);
+    ["Sanu"]
+    array;
+    (5) ["IJSE", "A", "B", "C", "D"]
+    array.splice(1,2);
+    (2) ["A", "B"]
+    array;
+    (3) ["IJSE", "C", "D"]
+
+
+
+    for(var i=0;i<array.length;i++){
+        console.log(array[i]);
+    }
+
+</script>
+</body>
+</html>
