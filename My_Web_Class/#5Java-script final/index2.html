@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<h1>Form</h1>
+<div class="container-fluid" style="margin-top: 100px">
+    <div class="row">
+        <div class="col col-md-6">
+            <p class="form-group">
+                Customer ID
+                <input type="text" id="txtCusID" class="form-control">
+            </p>
+            <p>
+                Customer Name
+                <input type="text" id="txtCusName" class="form-control">
+            </p>
+            <p>
+                Customer Address
+                <input type="text" id="txtCusAddress" class="form-control">
+            </p>
+            <button class="btn btn-danger" id="btnCustomer">Save Customer</button>
+        </div>
+
+        <div class="col col-md-6">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-danger">
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<h2>Add/Update Person Form</h2>
+<div id = "data" class="col-6 col-md-6">
+    <form id = "person">
+        <br><br>
+        Customer Name: <input id = "name" name = "name" type = "text" class="form-control">
+        <br><br>
+        Customer Gender: <input name = "gender" type = "radio" value = "Male"> Male
+        <input name = "gender" type = "radio" value = "Female"> Female
+        <br><br>
+        Address: &nbsp;&nbsp;&nbsp; <input id = "address" name = "age" type = "text" class="form-control">
+        <br><br>
+        Salary: &nbsp;&nbsp;&nbsp; <input id = "age" name = "age" type = "text" class="form-control">
+        <br><br>
+        City: &nbsp;&nbsp;&nbsp;
+        <select id = "city" name = "city">
+        <option>Moratuwa</option>
+        <option>Panadura</option>
+        <option>Kalutara</option>
+        </select>
+        <br><br>
+        <input type="button" class="btn btn-success" id = "button"  value = " Reset " onclick = "ResetForm()">&nbsp;&nbsp;&nbsp;
+        <input type="button" class="btn btn-success" value = " Submit "  onclick="AddData()">
+        <input id = "button2" class="btn btn-success" type = "button" value = " Update ">
+    </form>
+</div>
+
+<h3>List Of Persons</h3>
+<div class="col col-md-6" id = "tab">
+    <table class="table" id = "list" cellspacing = "0px" cellpadding = "20px" text-align = "center">
+        <thead class="bg-danger">
+        <tr>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Address</td>
+            <td>Salary</td>
+            <td>City</td>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<script>
+    function AddData() {
+        var x = document.getElementById("age").value;
+        var y = document.getElementById("name").value;
+        var letters = '/^[a-zA-Z]+$/';
+        if ((parseInt(x) != (x)) && (y == parseInt(y))) {
+            alert("Wrong Value Entered");
+        } else {
+            var rows = "";
+            var name = document.getElementById("name").value;
+            var gender = $('input[name="gender"]:checked').val();
+            var address = document.getElementById("address").value;
+            var age = document.getElementById("age").value;
+            var city = document.getElementById("city").value;
+
+            rows += "<tr><td>" + name + "</td><td>" + gender + "</td><td>" + address + "</td><td>" + age + "</td><td>" + city + "</td></tr>";
+            $(rows).appendTo("#list tbody");
+        }
+    }
+
+    function ResetForm(){
+        document.getElementById("person").reset();
+    }
+</script>
+<script rel="script" src="js/jquery.js"></script>
+<script rel="script" src="dto/CustomerDTO.js"></script>
+<script rel="script" src="db/db.js"></script>
+<script rel="script" src="controller/CustomerController.js"></script>
+</body>
+</html>

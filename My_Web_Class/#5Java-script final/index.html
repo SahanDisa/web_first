@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <input type="text" id="txtJSTest" placeholder="js test" class="form-control" style="margin-top: 100px">
+    <!--<button class="btn btn-danger">Save Customer</button>-->
+
+    <h1>...</h1>
+</div>
+<h1>Institute of Software Engineering</h1>
+
+<script src="js/jquery.js" rel="script"></script>
+<script>
+    // $("#txtJSTest").on("keypress",function (eventData) {
+    //     eventData.preventDefault();
+    //     //this stops the Default state of the selected element
+    //     console.log("The Key Code is "+eventData.which+" the key is "+eventData.key);
+    // });
+
+
+    // $("#txtJSTest").on("keydown",function (eventData) {
+    //     eventData.preventDefault();
+    //     //this stops the Default state of the selected element
+    //     console.log("The Key Code is "+eventData.which+" the key is "+eventData.key);
+    // });
+
+
+    // $("#txtJSTest").on("keyup",function (eventData) {
+    //     eventData.preventDefault();
+    //     //this stops the Default state of the selected element
+    //     console.log("The Key Code is "+eventData.which+" the key is "+eventData.key);
+    // });
+
+
+    // $('#txtJSTest').keydown(function (eventData) {
+    //     console.log(eventData);
+    //    if(eventData.which>=65 && eventData.which<=90){
+    //
+    //    }else if(eventData.which==8){
+    //
+    //    }else{
+    //        eventData.preventDefault();
+    //    }
+    // });
+
+
+    // var tem="Hello there how are you..";
+    //
+    // tem.length
+    //
+    // tem.charAt(0);
+    //
+    // tem.charCodeAt(1);
+    //
+    // tem.substr(0,5);
+    //
+    // tem.substring(5,5);
+    //
+    // var str2="        left spaces   ";
+    //
+    // tem.trim();
+    //
+    // var str2="        left spaces   ";
+    //
+    // str2.trimRight();
+    //
+    // var str2="        left spaces   ";
+    //
+    // tem.trimLeft();
+
+
+    // var colours = ['red', 'green', 'orange', 'white', 'pink'];
+    //
+    // for (var i = 0; i < 10; i++) {
+    //     $('body').css('background-color', colours[i]);
+    // }
+
+
+    // js timers
+    // setTimeout(function () {
+    //     alert("The function is ok");
+    // }, 2000);
+
+
+    //setInterval(function () {
+    //     document.writeln("hello");
+    // }, 2000);
+
+
+    // var colors=['red','green','orange','pink','darkblue'];
+    // var i=0;
+    // setInterval(function () {
+    //     $('body').css('background',colors[i]);
+    //     $('body').css('transition',"all .4s");
+    //     i++;
+    //     if(i>colors.length){
+    //         i=0;
+    //     }
+    //
+    // },200);
+
+    // $('#txtJSTest').keydown(function (eventData) {
+    //     $('h1').text($(this).val());
+    // });
+
+
+    // mouse event
+    $(window).mousemove(function (eventData) {
+        $('h1').css('top', eventData.pageY);
+        $('h1').css('left', eventData.pageX);
+        $('h1').css('position', "absolute");
+        f();
+    });
+
+
+
+    // var i = 0;
+    // var id = setInterval(function () {
+    //     i++;
+    //     console.log(i);
+    //     if (i==5){
+    //         clearInterval(id);
+    //     }
+    //
+    //
+    // }, 200);
+
+</script>
+</body>
+</html>
