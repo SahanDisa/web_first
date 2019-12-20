@@ -1,0 +1,4 @@
+This is for testing text file
+Response from Ajax call
+=======================
+IJSE- Institute of Java and Software Engineering - 2018

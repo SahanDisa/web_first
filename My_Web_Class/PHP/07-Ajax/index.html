@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <h1>Read File via Ajax</h1>
+        </div>
+        <div class="card-body">
+            <div id="b11"></div>
+            <button id="b1" class="btn btn-primary">Ajax</button>
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h1>Read XML File via Ajax</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <table class="table table-hover table-bordered">
+                        <thead class="bg-danger">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Salary</th>
+                        </tr>
+                        </thead>
+                        <tbody id="xmltb"></tbody>
+                    </table>
+                </div>
+            </div>
+            <button id="b2" class="btn btn-warning">Ajax</button>
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h1>Read JSON File via Ajax</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8">
+                    <table class="table table-hover table-bordered">
+                        <thead class="bg-success">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Salary</th>
+                        </tr>
+                        </thead>
+                        <tbody id="jsontb"></tbody>
+                    </table>
+                </div>
+            </div>
+            <button id="b3" class="btn btn-danger">Ajax</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+    $("#b1").click(function () {
+        $('#b11').empty();
+        $.ajax({
+            url: "",
+            method: "GET"
+        }).done(function (resp) {
+            $('#b11').append(resp)
+        });
+    });
+
+
+    // reading xml file via ajax
+    $("#b2").click(function () {
+        $('#xmltb').empty();
+        $.ajax({
+            url: "db/xmlDB.xml",
+            method: "GET"
+        }).done(function (resp) {
+            $(resp).find("root details customer").each(function () {
+                let id = $(this).find("id").text();
+                let name = $(this).find("name").text();
+                let address = $(this).find("address").text();
+                let salary = $(this).find("salary").text();
+                let row="<tr><td>"+id+"</td><td>"+name+"</td><td>"+address+"</td><td>"+salary+"</td></tr>";
+                $('#xmltb').append(row);
+            });
+        });
+    });
+
+
+    // reading json file via ajax
+    $("#b3").click(function () {
+        $('#jsontb').empty();
+        $.ajax({
+            url: "db/dbJSON.json",
+            method: "GET"
+        }).done(function (resp) {
+            for (var i in resp) {
+                let id = resp[i].id;
+                let name = resp[i].name;
+                let address = resp[i].address;
+                let salary = resp[i].salary;
+                let row="<tr><td>"+id+"</td><td>"+name+"</td><td>"+address+"</td><td>"+salary+"</td></tr>";
+                $('#jsontb').append(row);
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

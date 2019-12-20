@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "exclude": [
+    {"id":"C001","name":"Ranuka","address":"Galle","salary":3838}
+  ]
+}

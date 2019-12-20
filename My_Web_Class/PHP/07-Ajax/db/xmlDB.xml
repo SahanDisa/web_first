@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <details>
+        <customer id="c1">
+            <id>C001</id>
+            <name>Ranuka Vithanage</name>
+            <address>Galle</address>
+            <salary>20000</salary>
+        </customer>
+        <customer id="c2">
+            <id>C002</id>
+            <name>Nisha Vithanage</name>
+            <address>Panadura</address>
+            <salary>48448</salary>
+        </customer>
+        <customer id="c3">
+            <id>C003</id>
+            <name>Sahan Dissanayaka</name>
+            <address>Moratuwa</address>
+            <salary>248448</salary>
+        </customer>
+    </details>
+</root>
