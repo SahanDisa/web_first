@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 50px">
+        <div class="offset-3 col-5">
+            <div class="form-group">
+                <form action="saveCustomer.php" method="get">
+                    <label for="cusID">Customer ID</label>
+                    <input class="form-control" id="cusID" name="cusID" type="text">
+                    <label for="cusName">Customer Name</label>
+                    <input class="form-control" id="cusName" name="cusName" type="text">
+                    <label for="cusAddress">Customer Address</label>
+                    <input class="form-control" id="cusAddress" name="cusAddress" type="text">
+                    <label for="cusSalary">Customer Salary</label>
+                    <input class="form-control" id="cusSalary" name="cusSalary" type="text">
+                    <button class="btn btn-danger" style="margin-top: 10px" type="submit" id="custSaveBtn">Save
+                        Customer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
