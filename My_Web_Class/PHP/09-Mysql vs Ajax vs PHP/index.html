@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 50px">
+        <div class="offset-3 col-5">
+            <div class="form-group">
+                <form id="customerSaveForm">
+                    <label for="cusID">Customer ID</label>
+                    <input class="form-control" id="cusID" name="cusID" type="text">
+                    <label for="cusName">Customer Name</label>
+                    <input class="form-control" id="cusName" name="cusName" type="text">
+                    <label for="cusAddress">Customer Address</label>
+                    <input class="form-control" id="cusAddress" name="cusAddress" type="text">
+                    <label for="cusSalary">Customer Salary</label>
+                    <input class="form-control" id="cusSalary" name="cusSalary" type="text">
+                    <button class="btn btn-success" style="margin-top: 10px" type="button" id="custSaveBtn">Save
+                        Customer
+                    </button>
+                    <button class="btn btn-warning" style="margin-top: 10px" type="button" id="custUpdateBtn">Update
+                        Customer
+                    </button>
+                    <button class="btn btn-danger" style="margin-top: 10px" type="button" id="custDeleteBtn">Delte
+                        Customer
+                    </button>
+                    <button class="btn btn-info" style="margin-top: 10px" type="button" id="custViewBtn">ViewAll
+                        Customer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 10px">
+        <div class="offset-2 col-8">
+            <table class="table table-hover table-bordered">
+                <thead class="bg-danger" style="color: white">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody id="cusTbody" style="color: black"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+
+    loadAllCustomers();
+    // save customer function
+    $('#custSaveBtn').click(function () {
+        let formData = $('#customerSaveForm').serialize();
+        $.ajax({
+            url: "saveCustomer.php",
+            method: "GET",
+            async: true,
+            data: formData + "&option=add"
+        }).done(function (resp) {
+            loadAllCustomers();
+            clear_all_text_fields();
+            alert(resp);
+        });
+
+    });
+
+
+    // update Customer function
+    $('#custUpdateBtn').click(function () {
+        let formData = $('#customerSaveForm').serialize();
+        $.ajax({
+            url: "saveCustomer.php",
+            method: "GET",
+            async: true,
+            data: formData + "&option=update"
+        }).done(function (resp) {
+            loadAllCustomers();
+            clear_all_text_fields();
+            alert(resp);
+        });
+    });
+
+
+    // delete Customer function
+    $('#custDeleteBtn').click(function () {
+        let formData = $('#customerSaveForm').serialize();
+        $.ajax({
+            url: "saveCustomer.php",
+            method: "GET",
+            async: true,
+            data: formData + "&option=delete"
+        }).done(function (resp) {
+            loadAllCustomers();
+            clear_all_text_fields();
+            alert(resp);
+        });
+    });
+
+
+    // viewAll Customer function
+    $('#custViewBtn').click(function () {
+        $('#cusTbody').empty();
+        let formData = $('#customerSaveForm').serialize();
+        $.ajax({
+            url: "saveCustomer.php",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            data: formData + "&option=getall",
+        }).done(function (resp) {
+            for (let i in resp) {
+                let customer = resp[i];
+                let row = "<tr class='t' ><td>" + customer[0] + "</td><td>" + customer[1] + "</td><td>" + customer[2] + "</td><td>" + customer[3] + "</td></tr>";
+                $('#cusTbody').append(row);
+            }
+            $('.t').click(function () {
+                $('#cusID').val($(this).find("td:nth-child(1)").text());
+                $('#cusName').val($(this).find("td:nth-child(2)").text());
+                $('#cusAddress').val($(this).find("td:nth-child(3)").text());
+                $('#cusSalary').val($(this).find("td:nth-child(4)").text());
+            });
+        });
+    });
+
+
+    // search customer function
+    $('#cusID').keyup(function (e) {
+        if (e.which == 13) {
+            let formData = $('#customerSaveForm').serialize();
+            $.ajax({
+                url: "saveCustomer.php",
+                method: "GET",
+                async: true,
+                dataType: "json",
+                data: formData + "&option=search",
+            }).done(function (resp) {
+                $('#cusID').val(resp.id);
+                $('#cusName').val(resp.name);
+                $('#cusAddress').val(resp.address);
+                $('#cusSalary').val(resp.salary);
+            });
+        }
+
+    });
+
+
+    // other_methods
+    function clear_all_text_fields() {
+        $('#cusID').val("");
+        $('#cusName').val("");
+        $('#cusAddress').val("");
+        $('#cusSalary').val("");
+    }
+
+
+    function loadAllCustomers() {
+        $('#cusTbody').empty();
+        let formData = $('#customerSaveForm').serialize();
+        $.ajax({
+            url: "saveCustomer.php",
+            method: "GET",
+            async: true,
+            dataType: "json",
+            data: formData + "&option=getall",
+        }).done(function (resp) {
+            for (let i in resp) {
+                let customer = resp[i];
+                let row = "<tr class='t'><td>" + customer[0] + "</td><td>" + customer[1] + "</td><td>" + customer[2] + "</td><td>" + customer[3] + "</td></tr>";
+                $('#cusTbody').append(row);
+            }
+            $('.t').click(function () {
+                $('#cusID').val($(this).find("td:nth-child(1)").text());
+                $('#cusName').val($(this).find("td:nth-child(2)").text());
+                $('#cusAddress').val($(this).find("td:nth-child(3)").text());
+                $('#cusSalary').val($(this).find("td:nth-child(4)").text());
+            });
+        });
+    }
+
+</script>
+
+</body>
+</html>
