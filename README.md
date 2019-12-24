@@ -1,9 +1,13 @@
 # web_first
 web first is a repositery which including web related technology projects and knowledgable stuff 
 
+web development in MVC architecture and layered 
+
 # web related stuff
-WEB Projects
-Libraries
+1.WEB Tutorials
+- web_class directory
+2.Libraries
+3.WEB Projects
 
 # languages
 
@@ -12,3 +16,4 @@ HTML,CSS,JS,PHP
 # Framework
 
 Bootstrap , ReactJS, Angualr, NodeJS
+
