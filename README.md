@@ -18,3 +18,10 @@ HTML,CSS,JS,PHP
 
 Bootstrap , ReactJS, Angualr, NodeJS
 
+# Mean Stack
+
+-Front-End :- Angular
+-Back-End :- NodeJS Express
+-Database :- MongoDB
+
+
